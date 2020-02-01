@@ -15,13 +15,14 @@ const mapOption = {
 class MyMap extends Component {
   render() {
     return (
-        <div>
             <YMaps>
-            <Map defaultState={mapState} defaultOptions={mapOption} >
+            <Map defaultState={mapState}  width='100%' height='100%'
+                options={{
+                    autoFitToViewport: 'always'
+                    }}>
                 {this.props.points.map(point => <Placemark geometry={point.coords} /> )}
             </Map>
           </YMaps>
-        </div>
     );
   }
 }

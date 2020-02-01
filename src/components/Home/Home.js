@@ -19,7 +19,7 @@ class Home extends Component {
         <div>
             <MyTable points={points}></MyTable>
         </div>
-        <div>
+        <div className='map'>
             <MyMap points={points}></MyMap>
         </div>
       </SplitterLayout>

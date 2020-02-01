@@ -19,6 +19,9 @@ class Header extends Component {
             <LinkContainer to="/users">
               <Nav.Link to="/users">Users</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/test">
+              <Nav.Link to="/test">Test</Nav.Link>
+            </LinkContainer>
         </Nav>
       </Navbar>
   </header>
