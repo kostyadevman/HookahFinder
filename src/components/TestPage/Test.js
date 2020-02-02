@@ -22,8 +22,8 @@ class Test extends Component {
         this.addAction( this.state.var1, e.target.value)
     }
     addAction (first, second) {
-        let var1 = Number(first)
-        let var2 = Number(second)
+        const var1 = Number(first)
+        const var2 = Number(second)
         let sum = '';
         if ( var1 && var2 ) {
             sum = var1 + var2;
