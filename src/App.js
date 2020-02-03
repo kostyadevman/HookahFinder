@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, FormControl, Button, Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Form, Container } from 'react-bootstrap';
 import { BrowserRouter } from 'react-router-dom';
-import Main from './components/Main/Main'
+import Router from './components/Router/Router'
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 
 class App extends Component {
   render() {
     return (
            <div>
-           <Header/>
-            <Main />
+               <Header/>
+               <Container>
+                   <Router />
+               </Container>
+               <Footer/>
           </div>
     );
   }
