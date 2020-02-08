@@ -1,6 +1,40 @@
 {
-  "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
+  "presets": ["@babel/react", "@babel/env"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    ["@babel/plugin-proposal-optional-chaining"],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "src": "./src",
+          "forms": "./src/forms/",
+          "components": "./src/components/",
+          "config": "./src/config",
+          "connection": "./src/connection",
+          "stores": "./src/stores/",
+          "theme": "./src/theme",
+          "assets": "./src/assets",
+          "types": "./src/types",
+          "pages": "./src/pages/",
+          "utils": "./src/utils/",
+          "icons": "./src/components/ui/assets/icons/",
+          "images": "./src/components/ui/assets/images/",
+          "fonts": "./src/components/ui/assets/fonts/"
+        }
+      }
+    ]
   ]
 }
