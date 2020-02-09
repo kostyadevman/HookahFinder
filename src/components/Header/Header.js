@@ -41,8 +41,8 @@ class Header extends Component {
                   <Navbar.Brand href='#'>{t('Menu.City')}</Navbar.Brand>
                 </Navbar>
               </Col>
-              <Col xs={3}>
-                <Nav className='pills'>
+              <Col xs={4}>
+                <Nav className='pills nav-fill'>
                   <LinkContainer style={navItem} to='/'>
                     <Nav.Link to='/'>{t('Menu.Catalog')}</Nav.Link>
                   </LinkContainer>

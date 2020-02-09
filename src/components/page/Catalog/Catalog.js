@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Row, Col, Container, Card, Form, Media } from 'react-bootstrap';
+import {Row, Col, Container, Card, Form, Media, Button} from 'react-bootstrap';
 // import Media from "react-bootstrap/esm/Media";
 import HookahImg from '../../../assets/img/hookah.png';
 import Faker from 'faker';
@@ -14,6 +14,7 @@ import StarRatingComponent from 'react-star-rating-component';
 // Pagination
 const HO_COUNT = 20;
 const RATING_STARS_COUNT = 5;
+const VISIBLE_HO_COUNT =  5;
 
 const filters = [
   {
@@ -36,46 +37,22 @@ const filters = [
   }
 ];
 
-// const hookahs = [
-//     {
-//         "id": 1,
-//         "name": "h_1",
-//         "description": "AAAAAAAAAAAAAA",
-//         "raiting": 2
-//     },
-//     {
-//         "id": 2,
-//         "name": "h_2",
-//         "description": "BBBBBBBBBBBB",
-//         "raiting": 3
-//     },
-//     {
-//         "id": 3,
-//         "name": "h_3",
-//         "description": "CCCCCCCCCCCCCC",
-//         "raiting": 1
-//     },
-//     {
-//         "id": 4,
-//         "name": "h_4",
-//         "description": "DDDDDD",
-//         "raiting": 3
-//     },
-//     {
-//         "id": 5,
-//         "name": "h_5",
-//         "description": "EEEEEEEEEEEEEE",
-//         "raiting": 5
-//     }
-// ]
 
 class Catalog extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hookahs: [],
-      filters: []
+      filters: [],
+      visible: VISIBLE_HO_COUNT
     };
+    this.loadMore = this.loadMore.bind(this);
+  }
+
+  loadMore() {
+       this.setState((prev) => {
+           return {visible: prev.visible + VISIBLE_HO_COUNT};
+       })
   }
 
   componentDidMount() {
@@ -101,7 +78,7 @@ class Catalog extends Component {
     // console.log(hookahs)
     return (
 
-      hookahs.map(hookah => (
+      hookahs.slice(0, this.state.visible).map(hookah => (
         <div>
           <Media key={hookah.id}>
             <img
@@ -178,6 +155,13 @@ class Catalog extends Component {
           <h1>Каталог</h1>
           <br />
           {this.renderCatalog()}
+          {this.state.visible < this.state.hookahs.length &&
+              <Button
+                  onClick={this.loadMore}
+                  variant="outline-primary">
+                  LoadMore
+              </Button>
+          }
 
         </Col>
         <Col xs={6} md={4}>
