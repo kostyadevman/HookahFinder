@@ -3,12 +3,44 @@ import PropTypes from 'prop-types';
 import { Nav, Navbar, Row, Col, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { withTranslation } from 'react-i18next';
-import HeaderImg from '../../assets/img/header_img.png';
+
+import HeaderImg from 'assets/img/header_img.png';
+import Routes from 'config/routes';
+
+// TODO
+// 1. fonts include?
+
+const headerTop = {
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundImage: `url(${HeaderImg})`,
+};
+
+const headerTopInner = {
+  paddingBottom: '3rem',
+  paddingTop: '3rem',
+  position: 'relative',
+  alignItems: 'center',
+  display: 'flex',
+};
+
+const HeaderTopH1 =  {
+    color: '#ffffff',
+    textAlign: 'center',
+    fontFamily: '"Poiret One", cursive',
+};
+
+const headerTopP1 = {
+    color: '#ffffff',
+    textAlign: 'center',
+    fontWeight: '300',
+}
 
 const pic = {
   width: '100%',
   height: '192px',
-  backgroundImage: `url(${HeaderImg})`
+  backgroundImage: `url(${HeaderImg})`,
+
 };
 
 const navBar = {
@@ -29,10 +61,18 @@ class Header extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div>
-        <div style={pic}>
-          <h1>Header ( Title & Logo )</h1>
-        </div>
+      <>
+          <Container fluid style={headerTop}>
+              <Row>
+                  <Container style={headerTopInner}>
+                      <Col>
+                        <h1 style={HeaderTopH1}>{t('Header.Title')}</h1>
+                        <p style={headerTopP1}>{t('Header.Description')}</p>
+                      </Col>
+                  </Container>
+              </Row>
+          </Container>
+
         <Navbar style={navBar} variant='dark'>
           <Container>
             <Row>
@@ -43,16 +83,16 @@ class Header extends Component {
               </Col>
               <Col xs={4}>
                 <Nav className='pills nav-fill'>
-                  <LinkContainer style={navItem} to='/'>
+                  <LinkContainer style={navItem} to={Routes.Root}>
                     <Nav.Link to='/'>{t('Menu.Catalog')}</Nav.Link>
                   </LinkContainer>
-                  <LinkContainer style={navItem} to='/map'>
+                  <LinkContainer style={navItem} to={Routes.Map}>
                     <Nav.Link to='/map'>{t('Menu.Map')}</Nav.Link>
                   </LinkContainer>
-                  <LinkContainer style={navItem} to='/users'>
+                  <LinkContainer style={navItem} to={Routes.Blog}>
                     <Nav.Link to='#'>{t('Menu.Blog')}</Nav.Link>
                   </LinkContainer>
-                  <LinkContainer style={navItem} to='/about'>
+                  <LinkContainer style={navItem} to={Routes.About}>
                     <Nav.Link to='/about'>{t('Menu.About')}</Nav.Link>
                   </LinkContainer>
                 </Nav>
@@ -61,8 +101,7 @@ class Header extends Component {
           </Container>
 
         </Navbar>
-
-      </div>
+      </>
     );
   }
 }

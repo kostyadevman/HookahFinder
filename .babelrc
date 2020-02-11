@@ -27,6 +27,7 @@
           "stores": "./src/stores/",
           "theme": "./src/theme",
           "assets": "./src/assets",
+          "api":  "./src/api",
           "types": "./src/types",
           "pages": "./src/pages/",
           "utils": "./src/utils/",

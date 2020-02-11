@@ -1,45 +1,29 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import {Row, Col, Container, Card, Form, Media, Button} from 'react-bootstrap';
-// import Media from "react-bootstrap/esm/Media";
-import HookahImg from '../../../assets/img/hookah.png';
+import PropTypes from 'prop-types';
 import Faker from 'faker';
 import StarRatingComponent from 'react-star-rating-component';
 
+import HookahImg from '../../../assets/img/hookah.png';
+import { getHookahs } from 'api/hookahs'
+import { getFilters} from "api/filters";
+import {withTranslation} from "react-i18next";
+
+
 // TODO
 // split Catalog and FilterPanel
-// Get data from Mock
-// Generate data with faker.js
 // Make FilterPanel toggle
 // Pagination
+
 const HO_COUNT = 20;
 const RATING_STARS_COUNT = 5;
 const VISIBLE_HO_COUNT =  5;
 
-const filters = [
-  {
-    name: 'filter_1'
-  },
-  {
-    name: 'filter_2'
-  },
-  {
-    name: 'filter_3'
-  },
-  {
-    name: 'filter_4'
-  },
-  {
-    name: 'filter_5'
-  },
-  {
-    name: 'filter_6'
-  }
-];
-
-
+@withTranslation()
 class Catalog extends Component {
+
   constructor(props) {
+
     super(props);
     this.state = {
       hookahs: [],
@@ -47,7 +31,12 @@ class Catalog extends Component {
       visible: VISIBLE_HO_COUNT
     };
     this.loadMore = this.loadMore.bind(this);
+
   }
+  static propTypes = {
+    t: PropTypes.func
+  };
+
 
   loadMore() {
        this.setState((prev) => {
@@ -56,22 +45,34 @@ class Catalog extends Component {
   }
 
   componentDidMount() {
-    this.setState({ filters: filters });
+    // this.setState({ filters: filters });
+    const self = this
+    getHookahs().then(function (response) {
+          self.setState({hookahs: response.data})
+    });
+
+    getFilters().then(function (response) {
+          self.setState({filters: response.data})
+    })
+    // this.getFakeData()
   }
 
-  componentWillMount() {
-    for (let i = 0; i < HO_COUNT; i++) {
-      const hookah = {
-        id: i,
-        name: Faker.internet.userName(),
-        raiting: 2
-
-      };
-      this.setState(prevState => ({
-        hookahs: [...prevState.hookahs, hookah]
-      }));
-    }
-  }
+  // getFakeData() {
+  //   let hookahs = []
+  //   for (let i = 0; i < HO_COUNT; i++) {
+  //     let hookah = {
+  //       id: i,
+  //       name: Faker.internet.userName(),
+  //       metro: Faker.random.arrayElement(["Бауманская"," Улица 1905 года","Юго-западная"]),
+  //       description: Faker.lorem.sentences(3,3),
+  //       cost: Faker.random.number({min:700, max:3000}),
+  //       rating: Faker.random.number({min:1, max:5}),
+  //
+  //     };
+  //     hookahs.push(hookah)
+  //   }
+  //   console.log(hookahs)
+  // }
 
   renderCatalog() {
     const { hookahs } = this.state;
@@ -92,12 +93,12 @@ class Catalog extends Component {
               <Container>
                 <Row>
                   <Col>
-                    <Media heading>{hookah.name}</Media>
+                    <Media heading={true}>{hookah.name}</Media>
                   </Col>
                   <Col>
                     <StarRatingComponent
                       starCount={RATING_STARS_COUNT}
-                      value={hookah.raiting}
+                      value={hookah.rating}
                     />
                   </Col>
                 </Row>
@@ -133,13 +134,14 @@ class Catalog extends Component {
   }
 
   renderPriceRange() {
+    const { t } = this.props;
     return (
       <Form.Group as={Row} md='10'>
-        <Form.Label column sm='2'>от</Form.Label>
+        <Form.Label column sm='2'>{t('Filter.From')}</Form.Label>
         <Col sm='3'>
           <Form.Control />
         </Col>
-        <Form.Label column sm='2'>до</Form.Label>
+        <Form.Label column sm='2'>{t('Filter.To')}</Form.Label>
         <Col sm='3'>
           <Form.Control />
         </Col>

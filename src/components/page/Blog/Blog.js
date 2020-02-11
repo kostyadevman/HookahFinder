@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Media } from 'react-bootstrap';
 
-class User extends React.Component {
+class Blog extends React.Component {
   constructor(props) {
     super(props);
 
@@ -41,4 +41,4 @@ class User extends React.Component {
   }
 }
 
-export default User;
+export default Blog;

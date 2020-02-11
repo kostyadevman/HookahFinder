@@ -6,6 +6,15 @@ export default {
       Catalog: 'КАТАЛОГ',
       Map: 'КАРТА',
       Blog: 'БЛОГ'
+    },
+    Header: {
+      Title: 'Где кальян',
+      Description: 'Краткое описание'
+    },
+    Filter: {
+      From: 'от',
+      To: 'до'
     }
+
   }
 };
