@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MyMap from '../../MyMap';
+import MyMap from './MyMap';
 import SplitterLayout from 'react-splitter-layout';
 import 'react-splitter-layout/lib/index.css';
-import MyTable from '../../MyTable';
+import MyTable from './MyTable';
 
 const points = [
   { pname: 'point_1', coords: [54.7, 39.99] },

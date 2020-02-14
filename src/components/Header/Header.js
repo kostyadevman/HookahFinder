@@ -11,9 +11,9 @@ import Routes from 'config/routes';
 // 1. fonts include?
 
 const headerTop = {
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundImage: `url(${HeaderImg})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundImage: `url(${HeaderImg})`
 };
 
 const headerTopInner = {
@@ -21,25 +21,25 @@ const headerTopInner = {
   paddingTop: '3rem',
   position: 'relative',
   alignItems: 'center',
-  display: 'flex',
+  display: 'flex'
 };
 
-const HeaderTopH1 =  {
-    color: '#ffffff',
-    textAlign: 'center',
-    fontFamily: '"Poiret One", cursive',
+const HeaderTopH1 = {
+  color: '#ffffff',
+  textAlign: 'center',
+  fontFamily: '"Poiret One", cursive'
 };
 
 const headerTopP1 = {
-    color: '#ffffff',
-    textAlign: 'center',
-    fontWeight: '300',
-}
+  color: '#ffffff',
+  textAlign: 'center',
+  fontWeight: '300'
+};
 
 const pic = {
   width: '100%',
   height: '192px',
-  backgroundImage: `url(${HeaderImg})`,
+  backgroundImage: `url(${HeaderImg})`
 
 };
 
@@ -62,16 +62,16 @@ class Header extends Component {
     const { t } = this.props;
     return (
       <>
-          <Container fluid style={headerTop}>
-              <Row>
-                  <Container style={headerTopInner}>
-                      <Col>
-                        <h1 style={HeaderTopH1}>{t('Header.Title')}</h1>
-                        <p style={headerTopP1}>{t('Header.Description')}</p>
-                      </Col>
-                  </Container>
-              </Row>
-          </Container>
+        <Container fluid style={headerTop}>
+          <Row>
+            <Container style={headerTopInner}>
+              <Col>
+                <h1 style={HeaderTopH1} className='myCls'>{t('Header.Title')}</h1>
+                <p style={headerTopP1}>{t('Header.Description')}</p>
+              </Col>
+            </Container>
+          </Row>
+        </Container>
 
         <Navbar style={navBar} variant='dark'>
           <Container>
@@ -84,16 +84,19 @@ class Header extends Component {
               <Col xs={4}>
                 <Nav className='pills nav-fill'>
                   <LinkContainer style={navItem} to={Routes.Root}>
-                    <Nav.Link to='/'>{t('Menu.Catalog')}</Nav.Link>
+                    <Nav.Link to={Routes.Root}>{t('Menu.Catalog')}</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer style={navItem} to={Routes.CatalogMobx}>
+                    <Nav.Link to={Routes.CatalogMobx}>{t('Menu.Catalog')}</Nav.Link>
                   </LinkContainer>
                   <LinkContainer style={navItem} to={Routes.Map}>
-                    <Nav.Link to='/map'>{t('Menu.Map')}</Nav.Link>
+                    <Nav.Link to={Routes.Map}>{t('Menu.Map')}</Nav.Link>
                   </LinkContainer>
                   <LinkContainer style={navItem} to={Routes.Blog}>
-                    <Nav.Link to='#'>{t('Menu.Blog')}</Nav.Link>
+                    <Nav.Link to={Routes.Blog}>{t('Menu.Blog')}</Nav.Link>
                   </LinkContainer>
                   <LinkContainer style={navItem} to={Routes.About}>
-                    <Nav.Link to='/about'>{t('Menu.About')}</Nav.Link>
+                    <Nav.Link to={Routes.About}>{t('Menu.About')}</Nav.Link>
                   </LinkContainer>
                 </Nav>
               </Col>

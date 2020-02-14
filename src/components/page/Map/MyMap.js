@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import './style.css';
 
 const mapData = {
   center: [55.751574, 37.573856],
@@ -8,10 +9,6 @@ const mapData = {
 };
 
 class MyMap extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
 

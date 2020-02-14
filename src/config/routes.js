@@ -13,9 +13,8 @@ export default {
   },
   Other: '*',
   Root: '/',
+  CatalogMobx: '/catalog',
   Map: '/map',
   Blog: '/blog',
-  About:  '/about'
-
-
+  About: '/about'
 };

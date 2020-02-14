@@ -18,35 +18,29 @@ const RATING_STARS_COUNT = 5;
 const VISIBLE_HO_COUNT = 5;
 
 @withTranslation()
-class Catalog extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hookahs: [],
-      filters: [],
-      visible: VISIBLE_HO_COUNT
-    };
-    this.loadMore = this.loadMore.bind(this);
-  }
+@observer
+class CatalogMobx extends Component {
+  @obserable hookahs = [];
+  @obserable filters = [];
+  @obserable visible = VISIBLE_HO_COUNT;
 
   static propTypes = {
     t: PropTypes.func
   };
 
-  loadMore() {
+  loadMore = () => {
     this.setState((prev) => {
       return { visible: prev.visible + VISIBLE_HO_COUNT };
     });
   }
 
   componentDidMount() {
-    const self = this;
     getHookahs().then(function (response) {
-      self.setState({ hookahs: response.data });
+      this.hookahs = response.data;
     });
 
     getFilters().then(function (response) {
-      self.setState({ filters: response.data });
+      this.filters = response.data;
     });
   }
 
@@ -162,4 +156,4 @@ class Catalog extends Component {
   }
 }
 
-export default Catalog;
+export default CatalogMobx;

@@ -52,7 +52,7 @@
       "files": [
         "*-test.js",
         "*.spec.js",
-        "api/Mock/Responses/*.js",
+        "src/api/responses/*.js",
         "src/locales/*.js"
       ],
       "rules": {
