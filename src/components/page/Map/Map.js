@@ -8,6 +8,7 @@ const points = [
   { pname: 'point_1', coords: [54.7, 39.99] },
   { pname: 'point_2', coords: [54.8, 39.7] },
   { pname: 'point_3', coords: [54.9, 39.6] },
+  { pname: 'point_4', coords: [55.5, 40.9] },
   { pname: 'point_4', coords: [55.5, 40.9] }
 ];
 
