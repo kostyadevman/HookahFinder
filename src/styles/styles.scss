@@ -15,20 +15,391 @@ h1{
 a{
     color: $link-color;
 }
-.welcome{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.bg-demo {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: whitesmoke;
-    width: 250px;
-    height: 250px;
-}
-.map {
-    width: 100%;
-    height: 100%;
-    position: relative;
+//.welcome{
+//    font-size: 24px;
+//    margin-bottom: 20px;
+//}
+//.bg-demo {
+//    background-position: center center;
+//    background-repeat: no-repeat;
+//    background-color: whitesmoke;
+//    width: 250px;
+//    height: 250px;
+//}
+
+// Common
+.btn {
+    border-radius: 0;
 }
 
+.btn-outline-primary {
+    color: #a63cd4;
+    border-color: #a63cd4;
+    outline-color: #a63cd4;
+}
+
+
+
+//
+
+// Catalog
+
+//.button-show_more {
+//    font-size: 1.2rem;
+//    background: #ffffff;
+//    margin-top: 1rem;
+//    margin-bottom: 3rem;
+//}
+
+
+//
+
+/*------------------------------ОСНОВНАЯ СТРАНИЦА--------------------------------*/
+
+
+
+body {
+    background: #F9F9F9;
+    font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+.fakeimg {
+    height: 190px;
+    width: 100%;
+}
+
+.header-top {
+    background-size: cover;
+    background-position: center;
+}
+
+.header-top-h1 {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+
+.header-top-p1 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 300;
+}
+
+.header-top-logo {
+    position: absolute;
+    left: 0;
+}
+
+.navbar {
+    height: 100%;
+    background: #64247F;
+    padding: 0;
+}
+
+.navbar a {
+
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.navbar-li:hover, .active {
+    background: #B365D4;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+.container-menu {
+    background: #64247F;
+}
+
+.container-main-h2 {
+    display: inline-block;
+    position: relative;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .container-main-h2 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+.container-main-h2::before {
+    display: block;
+    position: absolute;
+    content: '';
+    background: purple;
+    bottom: 2px;
+    height: 12px;
+    right: 0;
+    left: 0;
+    opacity: 0.2;
+}
+
+.card-right {
+    align-items: end;
+}
+
+@media only screen and (min-width: 768px) {
+    .card-right {
+        flex: 0 0 160px;
+    }
+}
+
+.card-img-left {
+    object-fit: cover;
+}
+
+.container-left {
+    cursor: pointer;
+    background: #dadada;
+    margin-bottom: 1.5em;
+    margin-left: none;
+}
+
+.container-left-p0 {
+    margin-left: 1.5em;
+}
+
+.container-left-p1 {
+    margin-left: 1.5em;
+}
+
+.container-left-p2 {
+    margin-left: 1.5em;
+}
+
+.container-left-star {
+    width: 80px;
+    height: 80px;
+}
+
+.container-left-cost {
+    vertical-align: bottom;
+}
+
+.button-show_more {
+    font-size: 1.2rem;
+    background: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.input-search {
+    border: 1px solid #4E026E;
+    padding: .5em;
+    outline-color: #4E026E;
+}
+
+.filter_list {
+    list-style: none;
+}
+
+.price-controls input {
+    width: 65px;
+}
+
+.bg-footer {
+    background: #4E026E;
+}
+
+/*------------------------------Статья------------------------------------------*/
+
+.article-p {
+    font-size: 20px;
+    line-height: 40px;
+    text-align: justify;
+}
+
+.article-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/*------------------------------О нас------------------------------------------*/
+.card-about {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+/*------------------------------Карта------------------------------------------*/
+.map-img {
+    width: 100%;
+}
+
+/*------------------------------ВИЗИТКА----------------------------------------*/
+
+.img-slider {
+    width: 100%;
+}
+
+.btn-more {
+    min-width: 260px;
+}
+
+/*----checkbox----*/
+.cb-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.cb-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: 1px solid #64247F;
+}
+
+/* On mouse-over, add a grey background color */
+.cb-container:hover input ~ .checkmark {
+    /*background-color: #ccc;*/
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb-container input:checked ~ .checkmark {
+    background-color: #64247F;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.cb-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+@media only screen and (min-width: 768px) {
+    .mr-md-n45 {
+        margin-right: -2rem !important;
+    }
+
+    .map-container {
+        height: auto;
+        overflow: auto;
+    }
+
+    .map-img {
+        /*width: auto;*/
+    }
+}
+
+.card-text {
+    color: #616161;
+}
+
+.card-tag {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    padding: .5rem 1rem;
+    color: white;
+    border: 1px solid white;
+}
+
+.card-img-blog {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-img-blog::after {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: all 1s;
+}
+
+
+.btn {
+    border-radius: 0;
+}
+
+.text-secondary {
+    color: #C4C4C4 !important;
+}
+
+.modal-right {
+    background-color: #64247F;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-right::after {
+    position: absolute;
+    content: "";
+    background-color: white;
+    left: -85%;
+    top: -30%;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.login-modal {
+    max-width: 100% !important;
+    max-height: 795px;
+    height: calc(100% - 16px);
+}
+.login-modal .modal-title {
+    font-weight: bold;
+}
+@media only screen and (min-width: 576px) {
+    .login-modal {
+        height: calc(100% - 56px);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

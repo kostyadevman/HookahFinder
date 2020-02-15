@@ -14,7 +14,12 @@ export default {
     Filter: {
       From: 'от',
       To: 'до'
+    },
+    About: {
+      Contacts: 'Контакты',
+      Title: 'O НАС'
     }
+
 
   }
 };
