@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-
-
-
-const footerItem = {
-    width: '100%',
-    height: '150px',
-    background: '#ffc2d5',
-}
+import { Container, Row, Col  } from 'react-bootstrap';
+import SocialNet from "../ScocialNet/SocialNet";
 
 
 class Footer extends Component {
   render() {
     return (
-        <div style={footerItem}>
-            <h1>Footer</h1>
-        </div>
+        <Container fluid={true} className="bg-footer">
+          <Row>
+              <Container className="d-flex align-items-center">
+                <div className="py-5 ml-auto">
+                  <SocialNet></SocialNet>
+                </div>
+              </Container>
+          </Row>
+        </Container>
     );
   }
 }
