@@ -8,7 +8,7 @@ import { observable } from 'mobx';
 import HookahImg from '../../../assets/img/hookah.png';
 import MoscowMetroLogo from '../../../assets/img/Moscow-metro-logo 1.png';
 
-import getHookahs from 'api/hookahs';
+import { getHookahs } from 'api/hookahs';
 import Rating from './Rating';
 import FilterCard from './FilterCard';
 
