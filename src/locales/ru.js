@@ -11,6 +11,11 @@ export default {
       Title: 'Где кальян',
       Description: 'Краткое описание'
     },
+    Catalog: {
+      Header: 'Каталог',
+      Currency: 'руб',
+      From: 'от'
+    },
     Filter: {
       From: 'от',
       To: 'до'

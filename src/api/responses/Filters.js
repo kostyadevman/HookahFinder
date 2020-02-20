@@ -1,5 +1,3 @@
-import Hookahs from "./Hookahs";
-
 const Filters = [
   {
     name: 'filter_1'
