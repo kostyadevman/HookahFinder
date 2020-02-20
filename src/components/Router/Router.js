@@ -4,7 +4,7 @@ import About from '../page/About/About';
 import Blog from '../page/Blog/Blog';
 import Catalog from '../page/Catalog/Catalog';
 import React, { Component } from 'react';
-import Routes from "../../config/routes";
+import Routes from '../../config/routes';
 
 class Router extends Component {
   render() {

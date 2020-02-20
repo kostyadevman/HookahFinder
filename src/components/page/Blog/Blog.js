@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Media } from 'react-bootstrap';
 
-class Blog extends React.Component {
+class Blog extends Component {
   constructor(props) {
     super(props);
 

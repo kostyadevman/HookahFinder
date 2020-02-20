@@ -7,7 +7,6 @@ import {
   WhatsappIcon
 } from 'react-share';
 
-
 class SocialNet extends Component {
   render() {
     return (

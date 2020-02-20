@@ -15,7 +15,6 @@ export default {
   Root: '/',
   Map: '/map',
   Blog: '/blog',
-  About:  '/about'
-
+  About: '/about'
 
 };

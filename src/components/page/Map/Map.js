@@ -13,25 +13,21 @@ const points = [
 ];
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
 
       <SplitterLayout
-            percentage
-            primaryMinSize={25}
-            secondaryInitialSize={70}
-          >
-            <div>
-              <MyTable points={points} />
-            </div>
-            <div className='map'>
-              <MyMap points={points} />
-            </div>
-          </SplitterLayout>
+        percentage
+        primaryMinSize={25}
+        secondaryInitialSize={70}
+      >
+        <div>
+          <MyTable points={points} />
+        </div>
+        <div className='map'>
+          <MyMap points={points} />
+        </div>
+      </SplitterLayout>
 
     );
   }

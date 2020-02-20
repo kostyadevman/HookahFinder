@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Container fluid={true}>
+        <Container fluid>
           <Router />
         </Container>
         <Footer />
