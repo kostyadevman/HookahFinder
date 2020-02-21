@@ -18,13 +18,13 @@ const Filters = [
     name: 'filter_3'
   },
   {
-    name: 'filter_4'
+    name: 'filter_4wegwe'
   },
   {
     name: 'filter_5'
   },
   {
-    name: 'filter_6'
+    name: 'filter_6234523regewe'
   }
 ];
 
