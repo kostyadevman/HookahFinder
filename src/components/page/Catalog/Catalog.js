@@ -35,7 +35,9 @@ class Catalog extends Component {
   componentDidMount() {
     const self = this;
     getHookahs().then(function (response) {
-      self.hookahs = response.data;
+      setTimeout(() => {
+        self.hookahs = response.data;
+      }, 2000);
     });
   }
 
