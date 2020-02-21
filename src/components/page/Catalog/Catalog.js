@@ -33,7 +33,7 @@ class Catalog extends Component {
   }
 
   componentDidMount() {
-    self = this;
+    const self = this;
     getHookahs().then(function (response) {
       self.hookahs = response.data;
     });
