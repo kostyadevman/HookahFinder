@@ -1,9 +1,9 @@
 const Filters = [
   {
-    name: 'filter_1'
+    name: 'filter_19'
   },
   {
-    name: 'filter_2'
+    name: 'filter_26'
   },
   {
     name: 'filter_3'

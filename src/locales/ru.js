@@ -23,6 +23,12 @@ export default {
     About: {
       Contacts: 'Контакты',
       Title: 'O НАС'
+    },
+    Blog: {
+      Header: 'Блог',
+      Filter: {
+        Button: 'Применить'
+      }
     }
 
   }
