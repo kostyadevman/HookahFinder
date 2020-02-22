@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import './style.css';
+import PropTypes from 'prop-types';
 
 const mapData = {
   center: [55.751574, 37.573856],
@@ -9,6 +10,10 @@ const mapData = {
 };
 
 class MyMap extends Component {
+  static propTypes = {
+    points: PropTypes.object
+  }
+
   render() {
     return (
 
@@ -25,7 +30,7 @@ class MyMap extends Component {
             { autoFitToViewport: 'always' }
           }
         >
-          {this.props.points.map(point => <Placemark geometry={point.coords} />)}
+          {this.props.points.map(point => <Placemark key={point.id} geometry={point.coords} />)}
         </Map>
       </YMaps>
 
