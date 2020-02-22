@@ -7,27 +7,6 @@ import PropTypes from 'prop-types';
 
 import { getFilters } from 'api/filters';
 
-const Filters = [
-  {
-    name: 'filter_1'
-  },
-  {
-    name: 'filter_2'
-  },
-  {
-    name: 'filter_3'
-  },
-  {
-    name: 'filter_4'
-  },
-  {
-    name: 'filter_5'
-  },
-  {
-    name: 'filter_6'
-  }
-];
-
 @withTranslation()
 @observer
 class FilterCard extends Component {
@@ -38,12 +17,10 @@ class FilterCard extends Component {
     };
 
     componentDidMount() {
-      // self = this
-      // getFilters().then(function (response) {
-      //     self.filters = response.data;
-      // });
-      this.filters = Filters;
-      // console.log(this.filters)
+      const self = this;
+      getFilters().then(function (response) {
+        self.filters = response.data;
+      });
     }
 
     renderFilterSearch() {

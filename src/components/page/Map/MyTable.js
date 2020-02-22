@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import PropTypes from 'prop-types';
 
 class MyTable extends Component {
+  static propTypes = {
+    points: PropTypes.object
+  }
+
   render() {
     return (
       <div>
