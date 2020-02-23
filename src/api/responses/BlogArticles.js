@@ -1,123 +1,143 @@
 const BlogArticles = [
   {
     id: 0,
-    create_date: '2016-03-28T03:34:09.328Z',
-    title: 'Doug_Bradtke',
-    description: 'Et in est aut ut ipsam maxime harum vel.3Atque dolorem dolorem autem.3Delectus fugit tempora.'
+    create_date: '2007-07-02T14:31:59.823Z',
+    title: 'Martine_Leannon',
+    tag: 'Аксессуары',
+    description: 'Quo sint aliquid.3A repudiandae dicta quibusdam quibusdam explicabo eius quasi cupiditate.3Unde unde quod soluta impedit possimus dolores.'
   },
   {
     id: 1,
-    create_date: '2000-04-19T01:50:48.489Z',
-    title: 'Coy_Conn35',
-    description: 'Laboriosam enim voluptas.3Facilis reprehenderit a voluptas atque earum ipsa quia nesciunt.3Minima ut pariatur veritatis sit non.'
+    create_date: '2003-06-18T04:35:57.416Z',
+    title: 'Glenda_Koepp',
+    tag: 'События',
+    description: 'Adipisci ipsum inventore sed animi repellendus aut unde molestiae.3Doloremque ullam reprehenderit sed vitae autem consequatur repellendus quae.3Enim eos id eum vel ad totam ut aut.'
   },
   {
     id: 2,
-    create_date: '1997-04-28T01:03:35.603Z',
-    title: 'Arlene_Sauer',
-    description: 'Sapiente at et distinctio deserunt dolorem amet.3Optio vel fuga nostrum.3Aut maxime fugiat ipsum quia et sequi.'
+    create_date: '2003-09-07T10:37:27.155Z',
+    title: 'Amir_Romaguera32',
+    tag: 'Обзоры табаков',
+    description: 'Optio laudantium eos dolorem consequatur.3Commodi id quia nihil illum provident omnis facilis.3Velit pariatur omnis.'
   },
   {
     id: 3,
-    create_date: '1990-08-06T05:10:14.221Z',
-    title: 'Winnifred23',
-    description: 'Labore in vel id quidem dolores quo dolor ullam.3Omnis sit debitis asperiores rem molestiae ut ipsam.3Nisi minus eius odio sit cupiditate architecto eligendi sed in.'
+    create_date: '1991-04-19T12:51:27.459Z',
+    title: 'Jazmin59',
+    tag: 'Обзоры кальянных',
+    description: 'Explicabo numquam pariatur temporibus.3Voluptate eum blanditiis minus non et.3Culpa molestiae quo repudiandae dolorem nesciunt.'
   },
   {
     id: 4,
-    create_date: '2008-05-14T02:53:50.018Z',
-    title: 'Annabel.Bradtke',
-    description: 'Consequatur nisi et possimus qui sunt necessitatibus repellendus.3Laborum at accusantium quidem iusto saepe consequatur iure.3In veniam sint earum.'
+    create_date: '2002-11-23T08:39:58.646Z',
+    title: 'Hertha.Moore98',
+    tag: 'Обзоры табаков',
+    description: 'Illo in neque et sequi blanditiis alias qui eaque ut.3Dignissimos et et deleniti eum dolor.3A in soluta fugiat suscipit quia labore exercitationem.'
   },
   {
     id: 5,
-    create_date: '2010-10-07T06:20:29.808Z',
-    title: 'Bridget.Effertz68',
-    description: 'Quos voluptatem ipsum sapiente minima quia.3Fuga natus dolor.3Non necessitatibus nihil dolor vel et qui magni non.'
+    create_date: '2001-12-31T18:54:42.463Z',
+    title: 'Ewell.Walsh',
+    tag: 'Аксессуары',
+    description: 'Voluptatem quam esse ut cum.3Dolorem autem quo recusandae soluta.3Quaerat dolorem libero enim dolorem.'
   },
   {
     id: 6,
-    create_date: '1991-07-07T23:25:29.509Z',
-    title: 'Miracle67',
-    description: 'Voluptas occaecati ratione quia quam suscipit rem alias error.3Hic incidunt dolorem fugiat et sed eos voluptatem architecto commodi.3Odio deserunt esse voluptate esse officiis vel doloribus necessitatibus.'
+    create_date: '2009-05-28T02:10:31.733Z',
+    title: 'Dane_Schowalter94',
+    tag: 'Обзоры табаков',
+    description: 'Autem ut mollitia atque maiores veniam consectetur atque quae.3Ut quia hic aut esse beatae esse deserunt odit.3Eaque maxime ea voluptas consectetur nam.'
   },
   {
     id: 7,
-    create_date: '2009-06-28T20:52:05.370Z',
-    title: 'Kathleen37',
-    description: 'Dolore dolorem recusandae provident est ea veritatis velit magni.3Vitae est qui ad.3Eos minima tempore vitae ullam quam vel.'
+    create_date: '1999-04-05T23:58:38.734Z',
+    title: 'Gwendolyn.Bradtke',
+    tag: 'Кальян на фруктах',
+    description: 'Qui odit fugiat dolores optio atque laboriosam iure.3Nemo labore vel.3Sed aspernatur et quo laboriosam libero et blanditiis.'
   },
   {
     id: 8,
-    create_date: '2005-06-15T16:02:11.713Z',
-    title: 'Elinore81',
-    description: 'Veritatis incidunt exercitationem totam autem facere iure soluta sint.3Voluptas ullam impedit quasi excepturi omnis voluptas molestias sit.3Ut voluptatem magnam distinctio.'
+    create_date: '1991-11-20T07:07:09.237Z',
+    title: 'Hailie87',
+    tag: 'Основные',
+    description: 'Similique possimus excepturi id mollitia sit et eos odio.3Ullam sed et fugit est porro quas ex.3Aliquam assumenda non porro consequuntur.'
   },
   {
     id: 9,
-    create_date: '2000-12-03T07:17:19.188Z',
-    title: 'Dee42',
-    description: 'Odio ad consequatur vel dignissimos et autem quas qui.3Omnis autem autem enim velit non deleniti aliquid dolorum vel.3Maiores quae adipisci magnam dicta.'
+    create_date: '2012-10-27T08:33:05.653Z',
+    title: 'Alessandro5',
+    tag: 'Обзоры кальянов',
+    description: 'Et quae pariatur dignissimos accusamus numquam aliquid.3Harum voluptate sed cum quibusdam natus.3Quibusdam nisi sit hic inventore ut cupiditate non illum aspernatur.'
   },
   {
     id: 10,
-    create_date: '1994-01-12T04:17:25.521Z',
-    title: 'Rebeca.Buckridge',
-    description: 'Reiciendis quia aut a assumenda.3Ut quae omnis.3Provident numquam est maiores placeat ipsam.'
+    create_date: '2007-09-24T18:59:18.731Z',
+    title: 'Abbigail56',
+    tag: 'Обзоры кальянных',
+    description: 'Eius facere iure.3Voluptas quia voluptatibus nihil maiores eveniet qui enim adipisci alias.3Quia excepturi omnis sed sint minus.'
   },
   {
     id: 11,
-    create_date: '2013-11-15T15:09:22.099Z',
-    title: 'Kiana.Hermiston',
-    description: 'Voluptatem natus rerum temporibus consequatur.3Beatae alias itaque.3Ut quia ut error doloremque molestiae dolorem.'
+    create_date: '2006-10-05T04:39:04.810Z',
+    title: 'Barbara53',
+    tag: 'События',
+    description: 'Consequatur eum rerum consequatur ut.3Maiores ut et inventore.3Quis voluptatem dolores accusamus et quaerat nobis.'
   },
   {
     id: 12,
-    create_date: '2004-05-20T07:09:29.288Z',
-    title: 'Alivia53',
-    description: 'Ad iste minus et atque.3Ex dolor rerum facilis nostrum.3Et est aut dolores provident doloremque error modi.'
+    create_date: '1991-08-31T01:29:29.312Z',
+    title: 'Frederick.Langworth26',
+    tag: 'Основные',
+    description: 'Quae aut officia tenetur consequatur rerum laboriosam pariatur placeat corrupti.3Est ut dolor ad tenetur occaecati vero.3Qui nihil in sed et repudiandae qui voluptas voluptatem aut.'
   },
   {
     id: 13,
-    create_date: '1993-05-31T06:02:50.583Z',
-    title: 'Justice.Schamberger',
-    description: 'Autem ducimus quaerat aliquid maxime hic aut repudiandae aliquid sapiente.3Necessitatibus voluptatem ut sed.3Vel magni aliquid dolorem laudantium commodi est.'
+    create_date: '1992-12-21T10:40:48.378Z',
+    title: 'Glennie_Spinka',
+    tag: 'Аксессуары',
+    description: 'Possimus est aut enim magni aut qui.3Enim velit laboriosam aliquam.3Labore aliquid aut aut eius minima in delectus in voluptatum.'
   },
   {
     id: 14,
-    create_date: '2019-11-20T05:21:59.448Z',
-    title: 'Erick_Bernhard',
-    description: 'Odit id non et.3Velit sed et et quae.3Saepe cupiditate consectetur aspernatur alias natus recusandae eos.'
+    create_date: '1998-08-11T16:38:10.022Z',
+    title: 'Carole84',
+    tag: 'Обзоры табаков',
+    description: 'Eaque voluptatibus sunt sint repellat est rerum.3Officiis incidunt eaque dicta.3Possimus voluptatum omnis exercitationem hic consectetur et facilis sapiente.'
   },
   {
     id: 15,
-    create_date: '2011-08-13T08:57:38.617Z',
-    title: 'Dixie_Bartell45',
-    description: 'Mollitia qui occaecati.3Ullam aliquam sed et voluptas et incidunt.3Itaque maiores rerum.'
+    create_date: '2016-02-12T07:10:15.034Z',
+    title: 'Rudolph.Ortiz32',
+    tag: 'Аксессуары',
+    description: 'Non rem ut quidem.3Dolorem autem magni.3Aut fugit et cum officia itaque animi.'
   },
   {
     id: 16,
-    create_date: '1991-03-17T08:14:10.548Z',
-    title: 'Janis_Lesch96',
-    description: 'Omnis rerum error dicta recusandae.3Suscipit aliquid impedit enim perferendis pariatur.3Qui est nostrum beatae ut dolor.'
+    create_date: '1999-04-15T15:34:29.593Z',
+    title: 'John_Beer',
+    tag: 'Обзоры кальянов',
+    description: 'Asperiores voluptatibus nobis nisi quia sunt consequatur numquam temporibus.3Fuga praesentium dolorem temporibus magnam dignissimos beatae voluptatem.3Et aut perferendis natus vero necessitatibus quasi.'
   },
   {
     id: 17,
-    create_date: '2004-04-06T12:55:56.133Z',
-    title: 'Rolando25',
-    description: 'Molestias voluptates dolorem.3Saepe recusandae culpa mollitia fugit nostrum et voluptatem vel.3Necessitatibus consectetur excepturi fugiat omnis quaerat excepturi neque incidunt ipsum.'
+    create_date: '2005-09-29T16:06:07.211Z',
+    title: 'Araceli.Volkman14',
+    tag: 'Обзоры кальянов',
+    description: 'Quia corporis sunt.3Autem exercitationem et quia quibusdam at asperiores.3Rerum quia nostrum et natus.'
   },
   {
     id: 18,
-    create_date: '2007-10-06T11:00:28.523Z',
-    title: 'Alberta_Reichert',
-    description: 'Reiciendis error autem magnam.3Voluptatem reprehenderit maiores aut aut consequatur sed est repudiandae distinctio.3Cum suscipit iste est tenetur ea alias aut eius.'
+    create_date: '1994-12-13T23:02:28.021Z',
+    title: 'Anastacio.Kuhn',
+    tag: 'Обзоры табаков',
+    description: 'Voluptatem cum dignissimos mollitia.3Corporis cumque alias in corrupti et incidunt quisquam corrupti.3Consequuntur nulla quidem.'
   },
   {
     id: 19,
-    create_date: '2000-12-26T06:16:49.805Z',
-    title: 'Christelle8',
-    description: 'Aperiam eius voluptatum.3Vel rerum qui.3Quae animi non et maxime consequatur est.'
+    create_date: '2010-03-03T06:43:21.044Z',
+    title: 'Harry.Zieme5',
+    tag: 'Аксессуары',
+    description: 'Est quia alias unde.3Odio et ipsum qui quis debitis et vel consequatur omnis.3Qui officiis et nihil quae et.'
   }
 ];
 

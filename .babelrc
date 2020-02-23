@@ -33,7 +33,8 @@
           "utils": "./src/utils/",
           "icons": "./src/components/ui/assets/icons/",
           "images": "./src/components/ui/assets/images/",
-          "fonts": "./src/components/ui/assets/fonts/"
+          "fonts": "./src/components/ui/assets/fonts/",
+          "assets": "./src/assets/"
         }
       }
     ]

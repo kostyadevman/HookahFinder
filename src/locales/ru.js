@@ -27,7 +27,8 @@ export default {
     Blog: {
       Header: 'Блог',
       Filter: {
-        Button: 'Применить'
+        Button: 'Применить',
+        LoadMore: 'Показать еще'
       }
     }
 
