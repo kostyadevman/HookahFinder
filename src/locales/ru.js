@@ -15,6 +15,9 @@ export default {
       Next: 'Далее',
       Register: 'Зарегестрироваться'
     },
+    ModalFilter: {
+      Filter: 'Фильтр'
+    },
     Register: {
       Next: 'Далее',
       Login: 'Вход в аккаунт'

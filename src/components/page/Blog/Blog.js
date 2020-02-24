@@ -8,6 +8,7 @@ import { Row, Col, Container, Button } from 'react-bootstrap';
 import HookahImg from 'assets/img/hookah.png';
 import { getBlogItems } from 'api/BlogItems';
 import { FilterCard } from './components';
+import { ModalFilter } from 'components';
 
 const PAGE_SIZE = 4;
 
@@ -16,6 +17,7 @@ const PAGE_SIZE = 4;
 class Blog extends Component {
   @observable blogItems = [];
   @observable itemsToShow = PAGE_SIZE;
+  @observable showFilter = false;
 
   static propTypes = {
     t: PropTypes.func.isRequired
@@ -30,6 +32,14 @@ class Blog extends Component {
 
   handleLoadMore = () => {
     this.itemsToShow += PAGE_SIZE;
+  }
+
+  handleShowFilter = () => {
+    this.showFilter = true;
+  }
+
+  handleHideFilter = () => {
+    this.showFilter = false;
   }
 
   renderBlogItems = () => {
@@ -77,6 +87,13 @@ class Blog extends Component {
           <Col xs={12} lg={9}>
             <div className='d-flex align-items-center'>
               <h2 className='container-main-h2'>{t('Blog.Header')}</h2>
+              <Button
+                variant='light'
+                className='d-inline-block d-lg-none ml-auto active'
+                onClick={this.handleShowFilter}
+              >
+                <img src='https://img.icons8.com/material-rounded/24/64247F/filter.png' />
+              </Button>
             </div>
             <Row>
               {this.renderBlogItems()}
@@ -86,6 +103,11 @@ class Blog extends Component {
           <Col lg={3} className='d-none d-lg-block'>
             <FilterCard />
           </Col>
+          <ModalFilter
+            show={this.showFilter}
+            mainContent={<FilterCard />}
+            onHide={this.handleHideFilter}
+          />
         </Row>
       </Container>
     );

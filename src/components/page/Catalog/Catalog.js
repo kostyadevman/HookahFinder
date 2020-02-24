@@ -12,6 +12,7 @@ import MoscowMetroLogo from 'assets/img/Moscow-metro-logo.png';
 import Routes from 'config/routes';
 import { getHookahs } from 'api/hookahs';
 import { Rating, FilterCard, MyMap } from './components';
+import { ModalFilter } from 'components';
 
 // TODO
 // Make FilterPanel toggle
@@ -23,6 +24,7 @@ const PAGE_SIZE = 5;
 class Catalog extends Component {
   @observable hookahs = [];
   @observable itemsToShow = PAGE_SIZE;
+  @observable showFilter = false;
 
   static propTypes = {
     t: PropTypes.func
@@ -39,14 +41,22 @@ class Catalog extends Component {
     });
   }
 
+  handleShowFilter = () => {
+    this.showFilter = true;
+  }
+
+  handleHideFilter = () => {
+    this.showFilter = false;
+  }
+
   renderCatalog() {
     const { t } = this.props;
     return (
       this.hookahs.slice(0, this.itemsToShow).map(hookah => {
         return (
           <Card key={hookah.id} className='flex-column flex-md-row bg-white mb-4'>
-            <Card.Img variant='left' src={hookah.image_url || HookahImg} className='col-2' />
-            <div className='p-3 card-right d-flex flex-row flex-md-column space-between align-items-end order-md-1 col-2'>
+            <Card.Img variant='left' src={hookah.image_url || HookahImg} />
+            <div className='p-3 card-right d-flex flex-row flex-md-column space-between align-items-end order-md-1'>
               <div className='rating flex-grow-1'>
                 <Rating rating={hookah.rating} />
               </div>
@@ -54,7 +64,7 @@ class Catalog extends Component {
                 {t('Catalog.From')} {hookah.cost} {t('Catalog.Currency')}.
               </div>
             </div>
-            <Card.Body className='col-9'>
+            <Card.Body>
               <Card.Title>{hookah.name}</Card.Title>
               <Card.Text className='card-text'>
                 <Image src={MoscowMetroLogo} />{hookah.metro}
@@ -93,6 +103,13 @@ class Catalog extends Component {
           <Col xs={12} lg={9}>
             <div className='d-flex align-items-center'>
               <h2 className='container-main-h2'>{t('Catalog.Header')}</h2>
+              <Button
+                variant='light'
+                className='d-inline-block d-lg-none ml-auto active'
+                onClick={this.handleShowFilter}
+              >
+                <img src='https://img.icons8.com/material-rounded/24/64247F/filter.png' />
+              </Button>
             </div>
             <Switch>
               <Route exact path={Routes.Root}>
@@ -107,6 +124,11 @@ class Catalog extends Component {
           <Col lg={3} className='d-none d-lg-block'>
             <FilterCard />
           </Col>
+          <ModalFilter
+            show={this.showFilter}
+            mainContent={<FilterCard />}
+            onHide={this.handleHideFilter}
+          />
         </Row>
       </Container>
     );

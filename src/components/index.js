@@ -4,4 +4,5 @@ export { default as Router } from './Router';
 export { default as ModalWindow } from './ModalWindow';
 export { default as Login } from './Login';
 export { default as Register } from './Register';
+export { default as ModalFilter } from './ModalFilter';
 export { default as FilterCard } from './FilterCard';

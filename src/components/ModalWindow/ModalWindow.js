@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { Modal, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
 
 import Routes from 'config/routes';
 import LogoSvg from 'assets/img/Logo.svg';
 
-@withTranslation()
 class ModalWindow extends Component {
   static propTypes = {
     show: PropTypes.bool,
