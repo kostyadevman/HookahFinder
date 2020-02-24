@@ -23,17 +23,11 @@
           "forms": "./src/forms/",
           "components": "./src/components/",
           "config": "./src/config",
-          "connection": "./src/connection",
-          "stores": "./src/stores/",
-          "theme": "./src/theme",
           "assets": "./src/assets",
           "api":  "./src/api",
-          "types": "./src/types",
+          "styles": "./src/styles",
           "pages": "./src/pages/",
-          "utils": "./src/utils/",
-          "icons": "./src/components/ui/assets/icons/",
-          "images": "./src/components/ui/assets/images/",
-          "fonts": "./src/components/ui/assets/fonts/"
+          "utils": "./src/utils/"
         }
       }
     ]

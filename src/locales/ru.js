@@ -1,11 +1,37 @@
 export default {
   translation: {
+    Formatted: {
+      DayMonthYear: 'DD.MM.YYYY'
+    },
     Menu: {
       City: 'Москва',
       About: 'О НАС',
       Catalog: 'КАТАЛОГ',
       Map: 'КАРТА',
-      Blog: 'БЛОГ'
+      Blog: 'БЛОГ',
+      Login: 'Вход'
+    },
+    Login: {
+      Email: 'E-mail',
+      Password: 'Пароль',
+      Login: 'Вход в аккаунт',
+      Next: 'Далее',
+      Register: 'Зарегестрироваться'
+    },
+    ModalFilter: {
+      Filter: 'Фильтр'
+    },
+    Register: {
+      Next: 'Далее',
+      Login: 'Вход в аккаунт'
+    },
+    Blog: {
+      Header: 'Блог',
+      ShowMore: 'Показать еще'
+    },
+    BlogItem: {
+      Back: '‹ Назад',
+      MoreArticles: 'Еще статьи'
     },
     Header: {
       Title: 'Где кальян',
@@ -14,16 +40,17 @@ export default {
     Catalog: {
       Header: 'Каталог',
       Currency: 'руб',
-      From: 'от'
+      From: 'от',
+      ShowMore: 'Показать еще'
     },
     Filter: {
       From: 'от',
-      To: 'до'
+      To: 'до',
+      Apply: 'Применить'
     },
     About: {
       Contacts: 'Контакты',
       Title: 'O НАС'
     }
-
   }
 };

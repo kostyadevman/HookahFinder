@@ -1,6 +1,11 @@
 import instance from './instance';
 
-function getFilters() {
-  return instance.get('/api/v1/filters.json');
+function getHookahFilters() {
+  return instance.get('/api/v1/hookah_filters.json');
 }
-export { getFilters };
+
+function getBlogFilters() {
+  return instance.get('/api/v1/blog_filters.json');
+}
+
+export { getHookahFilters, getBlogFilters };

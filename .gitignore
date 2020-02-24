@@ -1,3 +1,5 @@
+dist
+.DS_Store
 
 #Ignore thumbnails created by Windows
 Thumbs.db

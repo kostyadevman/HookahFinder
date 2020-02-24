@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-import bsStyles from 'bootstrap/dist/css/bootstrap.min.css';
-import appStyles from './styles/styles.scss';
+import fonts from 'styles/fonts.scss';
+import MaterialInputStyles from 'styles/material-input.scss';
+import appStyles from 'styles/styles.scss';
 
 import 'bootstrap';
 import App from './App';

@@ -3,96 +3,109 @@ import PropTypes from 'prop-types';
 import { Nav, Navbar, Row, Col, Container } from 'react-bootstrap';
 import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react';
+import { observable } from 'mobx';
+import { withRouter } from 'react-router';
 
-import HeaderImg from 'assets/img/header_img.png';
 import Routes from 'config/routes';
-
-// TODO
-// 1. fonts include?
-
-const headerTop = {
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundImage: `url(${HeaderImg})`
-};
-
-const headerTopInner = {
-  paddingBottom: '3rem',
-  paddingTop: '3rem',
-  position: 'relative',
-  alignItems: 'center',
-  display: 'flex'
-};
-
-const HeaderTopH1 = {
-  color: '#ffffff',
-  textAlign: 'center',
-  fontFamily: '"Poiret One", cursive'
-};
-
-const headerTopP1 = {
-  color: '#ffffff',
-  textAlign: 'center',
-  fontWeight: '300'
-};
-
-const containerMenu = {
-  background: '#64247F'
-};
-
-const navBar = {
-  height: '100%',
-  background: '#64247F',
-  padding: 0
-};
+import LogoImg from 'assets/img/Logo.png';
+import { Login, Register } from 'components';
+import { isCurrent } from 'utils/route';
 
 @withTranslation()
+@withRouter
+@observer
 class Header extends Component {
+  @observable showLogin = false;
+  @observable showRegister = false;
+
   static propTypes = {
-    t: PropTypes.func
+    t: PropTypes.func,
+    location: PropTypes.object
+  };
+
+  static MENU_DATA = [{
+    to: Routes.Hookahs,
+    name: 'Catalog'
+  }, {
+    to: Routes.Map,
+    name: 'Map'
+  }, {
+    to: Routes.Blog,
+    name: 'Blog'
+  }, {
+    to: Routes.About,
+    name: 'About'
+  }]
+
+  handleLoginClick = () => {
+    this.showLogin = true;
+  }
+
+  handleHideLogin = () => {
+    this.showLogin = false;
+  };
+
+  handleRegisterClick = () => {
+    this.showLogin = false;
+    this.showRegister = true;
+  }
+
+  handleLoginClick = () => {
+    this.showRegister = false;
+    this.showLogin = true;
+  }
+
+  handleHideRegister = () => {
+    this.showRegister = false;
   };
 
   render() {
     const { t } = this.props;
+
     return (
       <>
-        <Container fluid style={headerTop}>
+        <Container fluid className='header-top'>
           <Row>
-            <Container style={headerTopInner}>
+            <Container className='d-flex align-items-center py-5 position-relative'>
               <Col>
-                <h1 style={HeaderTopH1}>{t('Header.Title')}</h1>
-                <p style={headerTopP1}>{t('Header.Description')}</p>
+                <h1>{t('Header.Title')}</h1>
+                <p>{t('Header.Description')}</p>
               </Col>
+              <a className='header-top-logo d-none d-sm-block' href={Routes.Root}>
+                <img src={LogoImg} />
+              </a>
             </Container>
           </Row>
         </Container>
-        <Container fluid style={containerMenu}>
+        <Container fluid className='container-menu'>
           <Row>
             <Container>
-              <Navbar collapseOnSelect expand='sm' variant='dark' style={navBar}>
+              <Navbar collapseOnSelect expand='sm' variant='dark'>
                 <Navbar.Brand href='#'>Москва</Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
-                  <Nav className='mr-auto' variant='pills' as='ul' defaultActiveKey={0}>
-                    <Nav.Item as='li'>
-                      <Nav.Link eventKey={0} as={Link} to={Routes.Root}>{t('Menu.Catalog')}</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as='li'>
-                      <Nav.Link eventKey={1} as={Link} to={Routes.Map}>{t('Menu.Map')}</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as='li'>
-                      <Nav.Link eventKey={2} as={Link} to={Routes.Blog}>{t('Menu.Blog')}</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item as='li'>
-                      <Nav.Link eventKey={3} as={Link} to={Routes.About}>{t('Menu.About')}</Nav.Link>
-                    </Nav.Item>
+                  <Nav as='ul'>
+                    {Header.MENU_DATA.map((menuItem, i) => {
+                      return (
+                        <Nav.Item
+                          key={i}
+                          as='li'
+                          className={`${isCurrent(this.props.location.pathname, menuItem.to) ? 'active' : ''} navbar-li p-2 px-md-3 py-md-4`}
+                        >
+                          <Nav.Link eventKey={i} as={Link} to={menuItem.to}>{t(`Menu.${menuItem.name}`)}</Nav.Link>
+                        </Nav.Item>
+                      );
+                    })}
                   </Nav>
-                  <Navbar.Brand href='#'>Вход</Navbar.Brand>
+                  <Navbar.Brand onClick={this.handleLoginClick}>{t('Menu.Login')}</Navbar.Brand>
                 </Navbar.Collapse>
               </Navbar>
             </Container>
           </Row>
         </Container>
+        <Login show={this.showLogin} onHide={this.handleHideLogin} onRegisterClick={this.handleRegisterClick} />
+        <Register show={this.showRegister} onHide={this.handleHideRegister} onLoginClick={this.handleLoginClick} />
       </>
     );
   }

@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import i18n from 'i18next';
 import { I18nextProvider, initReactI18next } from 'react-i18next';
 import ICU from 'i18next-icu';
-import i18nConfig from 'config/i18n';
+import { withRouter } from 'react-router';
 
 import { Container } from 'react-bootstrap';
 import { BrowserRouter } from 'react-router-dom';
-import Router from './components/Router/Router';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import { Router, Header, Footer } from './components';
+
+import i18nConfig from 'config/i18n';
+import Routes from 'config/routes';
+import { isCurrent } from 'utils/route';
 
 i18n
   .use(ICU)
@@ -18,7 +21,20 @@ i18n
 
 window.i18n = i18n;
 
+@withRouter
 class App extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  };
+
+  componentDidMount() {
+    const { location, history } = this.props;
+    if (isCurrent(location.pathname, Routes.Root, true)) {
+      history.replace(Routes.Hookahs);
+    }
+  }
+
   render() {
     return (
       <div>
