@@ -5,7 +5,8 @@ const Hookahs = [
     metro: 'Бауманская',
     description: 'Dolorem vel eveniet.3Sit neque quos earum.3Harum et non vel sed nemo ea exercitationem ea.',
     cost: 849,
-    rating: 2
+    rating: 2,
+    coords: [54.7, 39.99]
   },
   {
     id: 1,
@@ -13,7 +14,8 @@ const Hookahs = [
     metro: 'Бауманская',
     description: 'Ducimus debitis fugit molestiae officia sint et dolor.3Id et provident neque et voluptas velit.3Sit fugit tempore provident et dolores autem corrupti nostrum.',
     cost: 2908,
-    rating: 5
+    rating: 5,
+    coords: [54.8, 39.7]
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const Hookahs = [
     metro: 'Бауманская',
     description: 'Aut magnam aperiam non.3Architecto est eos consequatur odit rerum asperiores culpa.3Neque laborum quibusdam.',
     cost: 1012,
-    rating: 4
+    rating: 4,
+    coords: [54.9, 39.6]
   },
   {
     id: 3,
@@ -29,7 +32,8 @@ const Hookahs = [
     metro: ' Улица 1905 года',
     description: 'Hic consectetur odio impedit ut molestiae officia illo laboriosam earum.3Impedit sed praesentium velit sed.3Laborum tempora harum deleniti vero.',
     cost: 2547,
-    rating: 5
+    rating: 5,
+    coords: [55.5, 40.9]
   },
   {
     id: 4,
@@ -37,7 +41,8 @@ const Hookahs = [
     metro: 'Юго-западная',
     description: 'Explicabo culpa et dolor sit et et quis eligendi.3Sit ducimus debitis accusamus consectetur fugiat sint a pariatur tempore.3Suscipit cupiditate nihil et voluptatibus earum voluptatibus.',
     cost: 1282,
-    rating: 4
+    rating: 4,
+    coords: [55.6, 40.92]
   },
   {
     id: 5,
@@ -45,7 +50,8 @@ const Hookahs = [
     metro: ' Улица 1905 года',
     description: 'Pariatur nesciunt molestiae deserunt laudantium.3Corrupti eligendi aut esse architecto dolor consequatur harum iure ut.3Harum eligendi dignissimos id labore nam.',
     cost: 785,
-    rating: 5
+    rating: 5,
+    coords: [54.6, 39.92]
   },
   {
     id: 6,

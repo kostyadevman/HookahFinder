@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import SocialNet from '../../ScocialNet/SocialNet';
+import SocialNet from '../../SocialNet/SocialNet';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 

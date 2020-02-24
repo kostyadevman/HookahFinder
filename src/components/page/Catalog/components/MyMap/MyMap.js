@@ -11,7 +11,7 @@ const mapData = {
 
 class MyMap extends Component {
   static propTypes = {
-    points: PropTypes.object
+    hookahs: PropTypes.array
   }
 
   render() {
@@ -20,17 +20,24 @@ class MyMap extends Component {
       <YMaps
         query={{
           ns: 'use-load-option',
-          load:
-      'Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon'
+          load: 'Map,Placemark,control.ZoomControl,control.FullscreenControl,geoObject.addon.balloon'
         }}
       >
         <Map
-          width='100%' height='100%' defaultState={mapData}
+          width='100%' height='500px' defaultState={mapData}
           options={
             { autoFitToViewport: 'always' }
           }
         >
-          {this.props.points.map(point => <Placemark key={point.id} geometry={point.coords} />)}
+          {this.props.hookahs.map(point => {
+            return (
+              <Placemark
+                key={point.id}
+                geometry={point.coords}
+                properties={{ iconContent: point.name }}
+              />
+            );
+          })}
         </Map>
       </YMaps>
 

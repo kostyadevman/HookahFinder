@@ -1,62 +1,10 @@
+$theme-colors: (
+  "primary": #A63CD4
+);
 
-@import "/_colors.scss";
-body {
-    color: $body-text;
-    background-color: #fafafa;
-    font-family: 'Museo Sans Cyrl', sans-serif;
-}
-h1,h2,h3,h4,h5,h6{
-    color: $heading-text;
-}
-h1{
-    font-size: 34px;
-}
-
-a{
-    color: $link-color;
-}
-//.welcome{
-//    font-size: 24px;
-//    margin-bottom: 20px;
-//}
-//.bg-demo {
-//    background-position: center center;
-//    background-repeat: no-repeat;
-//    background-color: whitesmoke;
-//    width: 250px;
-//    height: 250px;
-//}
-
-// Common
-.btn {
-    border-radius: 0;
-}
-
-.btn-outline-primary {
-    color: #a63cd4;
-    border-color: #a63cd4;
-    outline-color: #a63cd4;
-}
-
-
-
-//
-
-// Catalog
-
-//.button-show_more {
-//    font-size: 1.2rem;
-//    background: #ffffff;
-//    margin-top: 1rem;
-//    margin-bottom: 3rem;
-//}
-
-
-//
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 /*------------------------------ОСНОВНАЯ СТРАНИЦА--------------------------------*/
-
-
 
 body {
     background: #F9F9F9;
@@ -71,15 +19,16 @@ body {
 .header-top {
     background-size: cover;
     background-position: center;
+    background-image: url('../assets/img/header_img.png');
 }
 
-.header-top-h1 {
+.header-top h1 {
     color: #ffffff;
     text-align: center;
     font-family: 'Poiret One', cursive;
 }
 
-.header-top-p1 {
+.header-top p {
     color: #ffffff;
     text-align: center;
     font-weight: 300;
@@ -389,6 +338,7 @@ body {
     max-height: 795px;
     height: calc(100% - 16px);
 }
+
 .login-modal .modal-title {
     font-weight: bold;
 }
