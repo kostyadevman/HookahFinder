@@ -119,7 +119,7 @@ class Catalog extends Component {
               </Button>
             </div>
             <Switch>
-              <Route exact path={Routes.Root}>
+              <Route exact path={Routes.Hookahs}>
                 {this.renderCatalog()}
                 {this.itemsToShow < this.hookahs.length && this.renderLoadMore()}
               </Route>

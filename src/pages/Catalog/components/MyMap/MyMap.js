@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
-import './style.css';
 import PropTypes from 'prop-types';
+
+import './style.css';
 
 const mapData = {
   center: [55.751574, 37.573856],

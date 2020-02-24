@@ -5,11 +5,12 @@ import { withTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-import { matchPath, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 
 import Routes from 'config/routes';
 import LogoImg from 'assets/img/Logo.png';
 import { Login, Register } from 'components';
+import { isCurrent } from 'utils/route';
 
 @withTranslation()
 @withRouter
@@ -24,7 +25,7 @@ class Header extends Component {
   };
 
   static MENU_DATA = [{
-    to: Routes.Root,
+    to: Routes.Hookahs,
     name: 'Catalog'
   }, {
     to: Routes.Map,
@@ -36,15 +37,6 @@ class Header extends Component {
     to: Routes.About,
     name: 'About'
   }]
-
-  isCurrent = (currentPath, routePath) => {
-    const match = matchPath(currentPath, {
-      path: routePath,
-      exact: true
-    });
-
-    return match !== null;
-  };
 
   handleLoginClick = () => {
     this.showLogin = true;
@@ -99,7 +91,7 @@ class Header extends Component {
                         <Nav.Item
                           key={i}
                           as='li'
-                          className={`${this.isCurrent(this.props.location.pathname, menuItem.to) ? 'active' : ''} navbar-li p-2 px-md-3 py-md-4`}
+                          className={`${isCurrent(this.props.location.pathname, menuItem.to) ? 'active' : ''} navbar-li p-2 px-md-3 py-md-4`}
                         >
                           <Nav.Link eventKey={i} as={Link} to={menuItem.to}>{t(`Menu.${menuItem.name}`)}</Nav.Link>
                         </Nav.Item>

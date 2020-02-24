@@ -10,6 +10,7 @@ module.exports = {
   // mode: 'production',
   entry: { app: './src/index.js' },
   output: {
+    publicPath: '/',
     filename: '[name].[hash].js'
   },
   module: {

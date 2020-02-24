@@ -1,1 +1,1 @@
-export { default } from './ModalWindow.js';
+export { default } from './ModalWindow';

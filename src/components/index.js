@@ -6,3 +6,5 @@ export { default as Login } from './Login';
 export { default as Register } from './Register';
 export { default as ModalFilter } from './ModalFilter';
 export { default as FilterCard } from './FilterCard';
+export { default as BlogCard } from './BlogCard';
+export { default as SocialNet } from './SocialNet';

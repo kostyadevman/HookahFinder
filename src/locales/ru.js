@@ -1,5 +1,8 @@
 export default {
   translation: {
+    Formatted: {
+      DayMonthYear: 'DD.MM.YYYY'
+    },
     Menu: {
       City: 'Москва',
       About: 'О НАС',
@@ -25,6 +28,10 @@ export default {
     Blog: {
       Header: 'Блог',
       ShowMore: 'Показать еще'
+    },
+    BlogItem: {
+      Back: '‹ Назад',
+      MoreArticles: 'Еще статьи'
     },
     Header: {
       Title: 'Где кальян',

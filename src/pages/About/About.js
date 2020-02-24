@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import SocialNet from '../../SocialNet/SocialNet';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+
+import { SocialNet } from 'components';
 
 const TEXT = `
       Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько

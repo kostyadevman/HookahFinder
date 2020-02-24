@@ -5,11 +5,10 @@ import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 
-import HookahImg from 'assets/img/hookah.png';
 import FilterImg from 'assets/img/filter.png';
 import { getBlogItems } from 'api/BlogItems';
 import { FilterCard } from './components';
-import { ModalFilter } from 'components';
+import { ModalFilter, BlogCard } from 'components';
 
 const PAGE_SIZE = 4;
 
@@ -50,19 +49,11 @@ class Blog extends Component {
   renderBlogItems = () => {
     return this.blogItems.slice(0, this.itemsToShow).map((blogItem, i) => {
       return (
-        <div key={i} className='col-12 col-lg-6 p-3'>
-          <div className='card'>
-            <img src={blogItem.image_url || HookahImg} className='card-img-top card-img-blog' alt='...' />
-            <div className='card-tag'>{blogItem.tag}</div>
-            <div className='card-body'>
-              <h5 className='card-title'>{blogItem.title}</h5>
-              <h6 className='card-subtitle mb-2 text-muted'>{blogItem.date}</h6>
-              <p className='card-text'>
-                {blogItem.text}
-              </p>
-            </div>
-          </div>
-        </div>
+        <BlogCard
+          key={i}
+          className='col-12 col-lg-6 p-3'
+          blogItem={blogItem}
+        />
       );
     });
   }

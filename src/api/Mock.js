@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 
 import {
   Hookahs,
+  BlogItem,
   BlogItems,
   BlogFilters,
   HookahFilters
@@ -25,6 +26,7 @@ class Mock {
   };
 
   mockBlogItems = () => {
+    this.mock.onGet('/api/v1/blog_item/1.json').reply(200, BlogItem);
     this.mock.onGet('/api/v1/blog_items.json').reply(200, BlogItems);
   };
 

@@ -32,6 +32,8 @@
     "jshint": "^2.10.2",
     "lodash": "^4.17.13",
     "mobx-react": "^6.1.8",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.5.27",
     "npm": "^6.13.6",
     "popper.js": "^1.15.0",
     "prop-types": "latest",
