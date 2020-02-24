@@ -7,6 +7,7 @@ import { observable } from 'mobx';
 import { Switch, Route } from 'react-router-dom';
 
 import HookahImg from 'assets/img/hookah.png';
+import FilterImg from 'assets/img/filter.png';
 import MoscowMetroLogo from 'assets/img/Moscow-metro-logo.png';
 
 import Routes from 'config/routes';
@@ -14,14 +15,12 @@ import { getHookahs } from 'api/hookahs';
 import { Rating, FilterCard, MyMap } from './components';
 import { ModalFilter } from 'components';
 
-// TODO
-// Make FilterPanel toggle
-
 const PAGE_SIZE = 5;
 
 @withTranslation()
 @observer
 class Catalog extends Component {
+  @observable filters = [];
   @observable hookahs = [];
   @observable itemsToShow = PAGE_SIZE;
   @observable showFilter = false;
@@ -35,8 +34,12 @@ class Catalog extends Component {
   }
 
   componentDidMount() {
+    this.onApplyFilter();
+  }
+
+  onApplyFilter = (filterObject) => {
     const self = this;
-    getHookahs().then(function (response) {
+    getHookahs(filterObject).then(function (response) {
       self.hookahs = response.data;
     });
   }
@@ -94,6 +97,10 @@ class Catalog extends Component {
     );
   }
 
+  renderFilter = () => {
+    return (<FilterCard handleApplyFilter={this.onApplyFilter} />);
+  }
+
   render() {
     const { t } = this.props;
 
@@ -108,7 +115,7 @@ class Catalog extends Component {
                 className='d-inline-block d-lg-none ml-auto active'
                 onClick={this.handleShowFilter}
               >
-                <img src='https://img.icons8.com/material-rounded/24/64247F/filter.png' />
+                <img src={FilterImg} />
               </Button>
             </div>
             <Switch>
@@ -122,11 +129,11 @@ class Catalog extends Component {
             </Switch>
           </Col>
           <Col lg={3} className='d-none d-lg-block'>
-            <FilterCard />
+            {this.renderFilter()}
           </Col>
           <ModalFilter
             show={this.showFilter}
-            mainContent={<FilterCard />}
+            mainContent={this.renderFilter()}
             onHide={this.handleHideFilter}
           />
         </Row>

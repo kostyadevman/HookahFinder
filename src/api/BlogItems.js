@@ -1,6 +1,6 @@
 import instance from './instance';
 
-function getBlogItems() {
-  return instance.get('/api/v1/blog_items.json');
+function getBlogItems(filterObject) {
+  return instance.get('/api/v1/blog_items.json', { params: filterObject });
 }
 export { getBlogItems };

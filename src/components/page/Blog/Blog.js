@@ -6,6 +6,7 @@ import { observable } from 'mobx';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 
 import HookahImg from 'assets/img/hookah.png';
+import FilterImg from 'assets/img/filter.png';
 import { getBlogItems } from 'api/BlogItems';
 import { FilterCard } from './components';
 import { ModalFilter } from 'components';
@@ -24,8 +25,12 @@ class Blog extends Component {
   }
 
   componentDidMount() {
+    this.onApplyFilter();
+  }
+
+  onApplyFilter = (filterObject) => {
     const self = this;
-    getBlogItems().then(function (response) {
+    getBlogItems(filterObject).then(function (response) {
       self.blogItems = response.data;
     });
   }
@@ -79,6 +84,10 @@ class Blog extends Component {
     );
   }
 
+  renderFilter = () => {
+    return (<FilterCard handleApplyFilter={this.onApplyFilter} />);
+  }
+
   render() {
     const { t } = this.props;
     return (
@@ -92,7 +101,7 @@ class Blog extends Component {
                 className='d-inline-block d-lg-none ml-auto active'
                 onClick={this.handleShowFilter}
               >
-                <img src='https://img.icons8.com/material-rounded/24/64247F/filter.png' />
+                <img src={FilterImg} />
               </Button>
             </div>
             <Row>
@@ -101,11 +110,11 @@ class Blog extends Component {
             {this.itemsToShow < this.blogItems.length && this.renderLoadMore()}
           </Col>
           <Col lg={3} className='d-none d-lg-block'>
-            <FilterCard />
+            {this.renderFilter()}
           </Col>
           <ModalFilter
             show={this.showFilter}
-            mainContent={<FilterCard />}
+            mainContent={this.renderFilter()}
             onHide={this.handleHideFilter}
           />
         </Row>
